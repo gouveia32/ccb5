@@ -13,22 +13,12 @@ using System.Windows.Forms;
 
 namespace ccb5
 {
-    public partial class Fornecedores : Form
+    public partial class SelecionarFornecedor : Form
     {
-        public Fornecedores()
+        public long codFornecedor;
+        public SelecionarFornecedor()
         {
             InitializeComponent();
-        }
-        private void toolStripButton_Novo_Click(object sender, EventArgs e)
-        {
-            CadastroFornecedor novo = new CadastroFornecedor();
-            novo.ShowDialog();
-        }
-
-        private void toolStripButton_Selecionar_Click(object sender, EventArgs e)
-        {
-            ExibirFornecedor novo = new ExibirFornecedor();
-            novo.ShowDialog();
         }
 
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
@@ -36,37 +26,13 @@ namespace ccb5
             this.Close();
         }
 
-        private void dataGrid_Fornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void toolStripButton_Novo_Click(object sender, EventArgs e)
         {
-            ExibirFornecedor novo = new ExibirFornecedor(long.Parse(dataGrid_Fornecedor.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
+            CadastroFornecedor novo = new CadastroFornecedor();
             novo.ShowDialog();
-
         }
 
-        private void textBox_ValorBuscar_Click(object sender, EventArgs e)
-        {
-            if (textBox_ValorBuscar.Text == "Digite Nome Fantasia,Razão Social,CNPJ.")
-            {
-                textBox_ValorBuscar.Text = "";
-            }
-        }
-
-        private void button_Pesquisar_Click_1(object sender, EventArgs e)
-        {
-            dataGrid_Fornecedor.Rows.Clear();
-
-            foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBuscar.Text))
-            {
-                int index = dataGrid_Fornecedor.Rows.Add();
-                DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
-                dado.Cells["Código"].Value = fornecedor.CodigoFornecedor;
-                dado.Cells["Nome"].Value = fornecedor.NomeFantasia;
-                dado.Cells["Razao"].Value = fornecedor.RazaoSocial;
-                dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
-            }
-        }
-
-        private void Fornecedores_Activated(object sender, EventArgs e)
+        private void SelecionarFornecedor_Activated(object sender, EventArgs e)
         {
             dataGrid_Fornecedor.Rows.Clear();
 
@@ -74,24 +40,55 @@ namespace ccb5
             {
                 int index = dataGrid_Fornecedor.Rows.Add();
                 DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
-                dado.Cells["Código"].Value = fornecedor.CodigoFornecedor;
+                dado.Cells["Código"].Value = fornecedor.Id;
                 dado.Cells["Nome"].Value = fornecedor.NomeFantasia;
                 dado.Cells["Razao"].Value = fornecedor.RazaoSocial;
                 dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
             }
         }
 
-        private void Fornecedores_KeyDown(object sender, KeyEventArgs e)
+        private void dataGrid_Fornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            Fornecedor fornecedor = new FornecedorDAO().Buscar(long.Parse(dataGrid_Fornecedor.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
+            codFornecedor = fornecedor.Id;
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void button_Pesquisar_Click(object sender, EventArgs e)
+        {
+            dataGrid_Fornecedor.Rows.Clear();
+
+            foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBusca.Text))
+            {
+                int index = dataGrid_Fornecedor.Rows.Add();
+                DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
+                dado.Cells["Código"].Value = fornecedor.Id;
+                dado.Cells["Nome"].Value = fornecedor.NomeFantasia;
+                dado.Cells["Razao"].Value = fornecedor.RazaoSocial;
+                dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
+            }
+        }
+
+        private void textBox_ValorBusca_Click(object sender, EventArgs e)
+        {
+            if (textBox_ValorBusca.Text == "Digite Nome Fantasia,Razão Social,CNPJ.")
+            {
+                textBox_ValorBusca.Text = "";
+            }
+        }
+
+        private void SelecionarFornecedor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 dataGrid_Fornecedor.Rows.Clear();
 
-                foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBuscar.Text))
+                foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBusca.Text))
                 {
                     int index = dataGrid_Fornecedor.Rows.Add();
                     DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
-                    dado.Cells["Código"].Value = fornecedor.CodigoFornecedor;
+                    dado.Cells["Código"].Value = fornecedor.Id;
                     dado.Cells["Nome"].Value = fornecedor.NomeFantasia;
                     dado.Cells["Razao"].Value = fornecedor.RazaoSocial;
                     dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
@@ -100,4 +97,3 @@ namespace ccb5
         }
     }
 }
-

@@ -16,7 +16,7 @@ namespace ccb5
     public partial class ExibirFornecedor : Form
     {
         private long CodigoFornecedor = 0;
-        private long CodigoEndereco = 0;
+        private long EnderecoId = 0;
         public ExibirFornecedor()
         {
             InitializeComponent();
@@ -31,14 +31,14 @@ namespace ccb5
             textBox_CNPJ.Text = fornecedor.CNPJ;
             textBox_InscEstadual.Text = fornecedor.InscricaoEstadual;
             textBox_Email.Text = fornecedor.Email;
-            CodigoEndereco = fornecedor.CodigoEndereco;
+            EnderecoId = fornecedor.EnderecoId;
 
             TelefoneFornecedor telefone = new FornecedorService().BuscarTelefone(CodigoFornecedor);
-            telefone.CodigoFornecedor = CodigoFornecedor;
+            telefone.Id = CodigoFornecedor;
             textBox_Telefone.Text = telefone.Telefone;
             textBox_Celular.Text = telefone.Telefone;
 
-            Endereco endereco = new FornecedorService().BuscarEndereco(CodigoEndereco);
+            Endereco endereco = new FornecedorService().BuscarEndereco(EnderecoId);
             textBox_CEP.Text = endereco.CEP;
             textBox_Logradouro.Text = endereco.Logradouro;
             textBox_N.Text = endereco.Numero;

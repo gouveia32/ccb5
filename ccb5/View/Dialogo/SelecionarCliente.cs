@@ -43,25 +43,25 @@ namespace ccb5
 
                 ClienteService clienteService = new ClienteService();
 
-                string tipoPessoa = clienteService.TipoDePessoa(cliente.CodigoCliente);
+                string tipoPessoa = clienteService.TipoDePessoa(cliente.Id);
 
                 if (tipoPessoa == "PF")
                 {
-                    PessoaFisica pessoaFisica = clienteService.BuscarPessoaFisica(cliente.CodigoCliente);
+                    PessoaFisica pessoaFisica = clienteService.BuscarPessoaFisica(cliente.Id);
                     dado.Cells["Tipo"].Value = "Pessoa Física";
                     dado.Cells["Nome"].Value = pessoaFisica.Nome;
                     dado.Cells["Documento"].Value = pessoaFisica.RG;
-                    dado.Cells["Código"].Value = cliente.CodigoCliente;
+                    dado.Cells["Código"].Value = cliente.Id;
                     dado.Cells["Email"].Value = cliente.Email;
 
                 }
                 else if (tipoPessoa == "PJ")
                 {
-                    PessoaJuridica pessoaJuridica = clienteService.BuscarPessoaJuridica(cliente.CodigoCliente);
+                    PessoaJuridica pessoaJuridica = clienteService.BuscarPessoaJuridica(cliente.Id);
                     dado.Cells["Tipo"].Value = "Pessoa Juridica";
                     dado.Cells["Nome"].Value = pessoaJuridica.NomeFantasia;
                     dado.Cells["Documento"].Value = pessoaJuridica.CNPJ;
-                    dado.Cells["Código"].Value = cliente.CodigoCliente;
+                    dado.Cells["Código"].Value = cliente.Id;
                     dado.Cells["Email"].Value = cliente.Email;
                 }
 

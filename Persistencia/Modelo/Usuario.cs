@@ -8,7 +8,7 @@ namespace Persistencia.Modelo
 {
     public class Usuario
     {
-        public long CodigoUsuario { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public string RG { get; set; }
         public string CPF { get; set; }

@@ -16,7 +16,7 @@ namespace ccb5
     public partial class ExibirEmpregado : Form
     {
         private long Id = 0;
-        private long CodigoEndereco = 0;
+        private long EnderecoId = 0;
         public ExibirEmpregado()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace ccb5
             Empregado e = new EmpregadoService().BuscarEmpregado(Id);
             textBox_Nome.Text = e.Nome;
             textBox_Email.Text = e.Email;
-            CodigoEndereco = e.CodigoEndereco;
+            EnderecoId = e.EnderecoId;
             dateTimePicker_DataNascimento.Text = e.DataNascimento;
             dateTimePicker_DataAdmissao.Text = e.DataAdmissao;
             dateTimePicker_DataDemissao.Text = e.DataDemissao;
@@ -38,7 +38,7 @@ namespace ccb5
             textBox_Telefone.Text = telefone.Telefone;
             textBox_Celular.Text = telefone.Telefone;
 
-            Endereco endereco = new EmpregadoService().BuscarEndereco(CodigoEndereco);
+            Endereco endereco = new EmpregadoService().BuscarEndereco(EnderecoId);
             textBox_CEP.Text = endereco.CEP;
             textBox_Logradouro.Text = endereco.Logradouro;
             textBox_N.Text = endereco.Numero;

@@ -153,6 +153,24 @@ namespace ccb5
             Empregados novo = new Empregados();
             novo.ShowDialog();
         }
+
+        private void toolStripMenuItemCliente_Click(object sender, EventArgs e)
+        {
+            Clientes novo = new Clientes();
+            novo.ShowDialog();
+        }
+
+        private void toolStripMenuItemFornecedor_Click(object sender, EventArgs e)
+        {
+            Fornecedores novo = new Fornecedores();
+            novo.ShowDialog();
+        }
+
+        private void toolStripMenuItemEmpregado_Click(object sender, EventArgs e)
+        {
+            Empregados novo = new Empregados();
+            novo.ShowDialog();
+        }
     }
 }
 

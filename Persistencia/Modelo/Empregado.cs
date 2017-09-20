@@ -11,7 +11,7 @@ namespace Persistencia.Modelo
         public long Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
-        public long CodigoEndereco { get; set; }
+        public long EnderecoId { get; set; }
         public int Status { get; set; }
         public string DataNascimento { get; set; }
         public string DataAdmissao { get; set; }

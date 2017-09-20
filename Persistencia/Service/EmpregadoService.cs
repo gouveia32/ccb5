@@ -50,7 +50,7 @@ namespace Persistencia.Service
                         empregado.Email = email;
 
                         long id_endereco = new EnderecoDAO().Inserir(endereco);
-                        empregado.CodigoEndereco = id_endereco;
+                        empregado.EnderecoId = id_endereco;
                         empregado.Nome = nome;
                         empregado.Email = email;
                         //empregado.DataNascimento = da
@@ -104,7 +104,7 @@ namespace Persistencia.Service
                         e.Email = email;
 
                         Empregado empregado = new EmpregadoDAO().Buscar(Id);
-                        end.CodigoEndereco = empregado.CodigoEndereco;
+                        end.Id = empregado.EnderecoId;
                         end.CEP = cep;
                         end.Logradouro = logradouro;
                         end.Bairro = bairro;
@@ -159,7 +159,7 @@ namespace Persistencia.Service
                         Endereco end = new Endereco();
 
                         Empregado empregado = new EmpregadoDAO().Buscar(Id);
-                        end.CodigoEndereco = empregado.CodigoEndereco;
+                        end.Id = empregado.EnderecoId;
                         end.Status = 9;
 
                         new EnderecoDAO().Remover(end);

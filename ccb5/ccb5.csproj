@@ -72,52 +72,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View\CadastroEmpregados.cs">
+    <Compile Include="View\Cadastro\CadastroEmpregados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CadastroEmpregados.Designer.cs">
+    <Compile Include="View\Cadastro\CadastroEmpregados.Designer.cs">
       <DependentUpon>CadastroEmpregados.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empregado.cs">
+    <Compile Include="View\Cadastro\Empregado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empregado.Designer.cs">
+    <Compile Include="View\Cadastro\Empregado.Designer.cs">
       <DependentUpon>Empregado.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ExibirEmpregado.cs">
+    <Compile Include="View\Cadastro\ExibirEmpregado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ExibirEmpregado.Designer.cs">
+    <Compile Include="View\Cadastro\ExibirEmpregado.Designer.cs">
       <DependentUpon>ExibirEmpregado.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioEmpregados.cs">
+    <Compile Include="View\Relatorio\RelatorioEmpregados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RelatorioEmpregados.Designer.cs">
+    <Compile Include="View\Relatorio\RelatorioEmpregados.Designer.cs">
       <DependentUpon>RelatorioEmpregados.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioPedidos.cs">
+    <Compile Include="View\Relatorio\RelatorioPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RelatorioPedidos.Designer.cs">
+    <Compile Include="View\Relatorio\RelatorioPedidos.Designer.cs">
       <DependentUpon>RelatorioPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SelecionarCategoria.cs">
+    <Compile Include="View\Dialogo\SelecionarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SelecionarCategoria.Designer.cs">
+    <Compile Include="View\Dialogo\SelecionarCategoria.Designer.cs">
       <DependentUpon>SelecionarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CadastroFornecedor.cs">
+    <Compile Include="View\Cadastro\CadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CadastroFornecedor.Designer.cs">
+    <Compile Include="View\Cadastro\CadastroFornecedor.Designer.cs">
       <DependentUpon>CadastroFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CadastroUsuarios.cs">
+    <Compile Include="View\Cadastro\CadastroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CadastroUsuarios.Designer.cs">
+    <Compile Include="View\Cadastro\CadastroUsuarios.Designer.cs">
       <DependentUpon>CadastroUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Categorias.cs">
@@ -132,10 +132,10 @@
     <Compile Include="View\CheckList.Designer.cs">
       <DependentUpon>CheckList.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\EntregaVeiculo.cs">
+    <Compile Include="View\Cadastro\EntregaVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\EntregaVeiculo.Designer.cs">
+    <Compile Include="View\Cadastro\EntregaVeiculo.Designer.cs">
       <DependentUpon>EntregaVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ExibirCategoria.cs">
@@ -144,40 +144,40 @@
     <Compile Include="View\ExibirCategoria.Designer.cs">
       <DependentUpon>ExibirCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ExibirFornecedor.cs">
+    <Compile Include="View\Cadastro\ExibirFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ExibirFornecedor.Designer.cs">
+    <Compile Include="View\Cadastro\ExibirFornecedor.Designer.cs">
       <DependentUpon>ExibirFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ExibirPedido.cs">
+    <Compile Include="View\Processamento\ExibirPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ExibirPedido.Designer.cs">
+    <Compile Include="View\Processamento\ExibirPedido.Designer.cs">
       <DependentUpon>ExibirPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ExibirUsuario.cs">
+    <Compile Include="View\Cadastro\ExibirUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ExibirUsuario.Designer.cs">
+    <Compile Include="View\Cadastro\ExibirUsuario.Designer.cs">
       <DependentUpon>ExibirUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ExibirVeiculo.cs">
+    <Compile Include="View\Cadastro\ExibirVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ExibirVeiculo.Designer.cs">
+    <Compile Include="View\Cadastro\ExibirVeiculo.Designer.cs">
       <DependentUpon>ExibirVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Fornecedores.cs">
+    <Compile Include="View\Cadastro\Fornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Fornecedores.Designer.cs">
+    <Compile Include="View\Cadastro\Fornecedores.Designer.cs">
       <DependentUpon>Fornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Locacao.cs">
+    <Compile Include="View\Processamento\Locacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Locacao.Designer.cs">
+    <Compile Include="View\Processamento\Locacao.Designer.cs">
       <DependentUpon>Locacao.cs</DependentUpon>
     </Compile>
     <Compile Include="View\NovaCategoria.cs">
@@ -186,64 +186,64 @@
     <Compile Include="View\NovaCategoria.Designer.cs">
       <DependentUpon>NovaCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Pedidos.cs">
+    <Compile Include="View\Processamento\Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Pedidos.Designer.cs">
+    <Compile Include="View\Processamento\Pedidos.Designer.cs">
       <DependentUpon>Pedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioCategorias.cs">
+    <Compile Include="View\Relatorio\RelatorioCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RelatorioCategorias.Designer.cs">
+    <Compile Include="View\Relatorio\RelatorioCategorias.Designer.cs">
       <DependentUpon>RelatorioCategorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioClientes.cs">
+    <Compile Include="View\Relatorio\RelatorioClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RelatorioClientes.Designer.cs">
+    <Compile Include="View\Relatorio\RelatorioClientes.Designer.cs">
       <DependentUpon>RelatorioClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioFornecedores.cs">
+    <Compile Include="View\Relatorio\RelatorioFornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RelatorioFornecedores.Designer.cs">
+    <Compile Include="View\Relatorio\RelatorioFornecedores.Designer.cs">
       <DependentUpon>RelatorioFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Relatorios.cs">
+    <Compile Include="View\Relatorio\Relatorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Relatorios.Designer.cs">
+    <Compile Include="View\Relatorio\Relatorios.Designer.cs">
       <DependentUpon>Relatorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioUsuarios.cs">
+    <Compile Include="View\Relatorio\RelatorioUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RelatorioUsuarios.Designer.cs">
+    <Compile Include="View\Relatorio\RelatorioUsuarios.Designer.cs">
       <DependentUpon>RelatorioUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioVeiculos.cs">
+    <Compile Include="View\Relatorio\RelatorioVeiculos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RelatorioVeiculos.Designer.cs">
+    <Compile Include="View\Relatorio\RelatorioVeiculos.Designer.cs">
       <DependentUpon>RelatorioVeiculos.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SelecionarCliente.cs">
+    <Compile Include="View\Dialogo\SelecionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SelecionarCliente.Designer.cs">
+    <Compile Include="View\Dialogo\SelecionarCliente.Designer.cs">
       <DependentUpon>SelecionarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SelecionarFornecedor.cs">
+    <Compile Include="View\Dialogo\SelecionarFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SelecionarFornecedor.Designer.cs">
+    <Compile Include="View\Dialogo\SelecionarFornecedor.Designer.cs">
       <DependentUpon>SelecionarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SelecionarVeiculo.cs">
+    <Compile Include="View\Dialogo\SelecionarVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SelecionarVeiculo.Designer.cs">
+    <Compile Include="View\Dialogo\SelecionarVeiculo.Designer.cs">
       <DependentUpon>SelecionarVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Sobre.cs">
@@ -258,81 +258,87 @@
     <Compile Include="View\TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Autenticacao.cs">
+    <Compile Include="View\Dialogo\Autenticacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Autenticacao.Designer.cs">
+    <Compile Include="View\Dialogo\Autenticacao.Designer.cs">
       <DependentUpon>Autenticacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Clientes.cs">
+    <Compile Include="View\Cadastro\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Clientes.Designer.cs">
+    <Compile Include="View\Cadastro\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CadastroClientes.cs">
+    <Compile Include="View\Cadastro\CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CadastroClientes.Designer.cs">
+    <Compile Include="View\Cadastro\CadastroClientes.Designer.cs">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ExibirCliente.cs">
+    <Compile Include="View\Cadastro\ExibirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ExibirCliente.Designer.cs">
+    <Compile Include="View\Cadastro\ExibirCliente.Designer.cs">
       <DependentUpon>ExibirCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Usuarios.cs">
+    <Compile Include="View\Cadastro\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Usuarios.Designer.cs">
+    <Compile Include="View\Cadastro\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Veiculos.cs">
+    <Compile Include="View\Cadastro\Veiculos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Veiculos.Designer.cs">
+    <Compile Include="View\Cadastro\Veiculos.Designer.cs">
       <DependentUpon>Veiculos.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CadastroVeiculos.cs">
+    <Compile Include="View\Cadastro\CadastroVeiculos.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="View\CadastroVeiculos.Designer.cs">
+    <Compile Include="View\Cadastro\CadastroVeiculos.Designer.cs">
       <DependentUpon>CadastroVeiculos.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\CadastroEmpregados.resx">
+    <Compile Include="View\Utilitario\AjustarTabelas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Utilitario\AjustarTabelas.Designer.cs">
+      <DependentUpon>AjustarTabelas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Cadastro\CadastroEmpregados.resx">
       <DependentUpon>CadastroEmpregados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Empregado.resx">
+    <EmbeddedResource Include="View\Cadastro\Empregado.resx">
       <DependentUpon>Empregado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ExibirEmpregado.resx">
+    <EmbeddedResource Include="View\Cadastro\ExibirEmpregado.resx">
       <DependentUpon>ExibirEmpregado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioEmpregados.resx">
+    <EmbeddedResource Include="View\Relatorio\RelatorioEmpregados.resx">
       <DependentUpon>RelatorioEmpregados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioPedidos.resx">
+    <EmbeddedResource Include="View\Relatorio\RelatorioPedidos.resx">
       <DependentUpon>RelatorioPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Report1.rdlc" />
-    <EmbeddedResource Include="View\Report2.rdlc" />
-    <EmbeddedResource Include="View\Report3.rdlc" />
-    <EmbeddedResource Include="View\Report4.rdlc" />
-    <EmbeddedResource Include="View\Report5.rdlc" />
-    <EmbeddedResource Include="View\Report6.rdlc" />
-    <EmbeddedResource Include="View\Report7.rdlc" />
-    <EmbeddedResource Include="View\SelecionarCategoria.resx">
+    <EmbeddedResource Include="View\Relatorio\Report1.rdlc" />
+    <EmbeddedResource Include="View\Relatorio\Report2.rdlc" />
+    <EmbeddedResource Include="View\Relatorio\Report3.rdlc" />
+    <EmbeddedResource Include="View\Relatorio\Report4.rdlc" />
+    <EmbeddedResource Include="View\Relatorio\Report5.rdlc" />
+    <EmbeddedResource Include="View\Relatorio\Report6.rdlc" />
+    <EmbeddedResource Include="View\Relatorio\Report7.rdlc" />
+    <EmbeddedResource Include="View\Dialogo\SelecionarCategoria.resx">
       <DependentUpon>SelecionarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CadastroFornecedor.resx">
+    <EmbeddedResource Include="View\Cadastro\CadastroFornecedor.resx">
       <DependentUpon>CadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CadastroUsuarios.resx">
+    <EmbeddedResource Include="View\Cadastro\CadastroUsuarios.resx">
       <DependentUpon>CadastroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Categorias.resx">
@@ -341,63 +347,63 @@
     <EmbeddedResource Include="View\CheckList.resx">
       <DependentUpon>CheckList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\EntregaVeiculo.resx">
+    <EmbeddedResource Include="View\Cadastro\EntregaVeiculo.resx">
       <DependentUpon>EntregaVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ExibirCategoria.resx">
       <DependentUpon>ExibirCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ExibirFornecedor.resx">
+    <EmbeddedResource Include="View\Cadastro\ExibirFornecedor.resx">
       <DependentUpon>ExibirFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ExibirPedido.resx">
+    <EmbeddedResource Include="View\Processamento\ExibirPedido.resx">
       <DependentUpon>ExibirPedido.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ExibirUsuario.resx">
+    <EmbeddedResource Include="View\Cadastro\ExibirUsuario.resx">
       <DependentUpon>ExibirUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ExibirVeiculo.resx">
+    <EmbeddedResource Include="View\Cadastro\ExibirVeiculo.resx">
       <DependentUpon>ExibirVeiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Fornecedores.resx">
+    <EmbeddedResource Include="View\Cadastro\Fornecedores.resx">
       <DependentUpon>Fornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Locacao.resx">
+    <EmbeddedResource Include="View\Processamento\Locacao.resx">
       <DependentUpon>Locacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NovaCategoria.resx">
       <DependentUpon>NovaCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Pedidos.resx">
+    <EmbeddedResource Include="View\Processamento\Pedidos.resx">
       <DependentUpon>Pedidos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioCategorias.resx">
+    <EmbeddedResource Include="View\Relatorio\RelatorioCategorias.resx">
       <DependentUpon>RelatorioCategorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioClientes.resx">
+    <EmbeddedResource Include="View\Relatorio\RelatorioClientes.resx">
       <DependentUpon>RelatorioClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioFornecedores.resx">
+    <EmbeddedResource Include="View\Relatorio\RelatorioFornecedores.resx">
       <DependentUpon>RelatorioFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Relatorios.resx">
+    <EmbeddedResource Include="View\Relatorio\Relatorios.resx">
       <DependentUpon>Relatorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioUsuarios.resx">
+    <EmbeddedResource Include="View\Relatorio\RelatorioUsuarios.resx">
       <DependentUpon>RelatorioUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioVeiculos.resx">
+    <EmbeddedResource Include="View\Relatorio\RelatorioVeiculos.resx">
       <DependentUpon>RelatorioVeiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SelecionarCliente.resx">
+    <EmbeddedResource Include="View\Dialogo\SelecionarCliente.resx">
       <DependentUpon>SelecionarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SelecionarFornecedor.resx">
+    <EmbeddedResource Include="View\Dialogo\SelecionarFornecedor.resx">
       <DependentUpon>SelecionarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SelecionarVeiculo.resx">
+    <EmbeddedResource Include="View\Dialogo\SelecionarVeiculo.resx">
       <DependentUpon>SelecionarVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sobre.resx">
@@ -406,25 +412,25 @@
     <EmbeddedResource Include="View\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Autenticacao.resx">
+    <EmbeddedResource Include="View\Dialogo\Autenticacao.resx">
       <DependentUpon>Autenticacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Clientes.resx">
+    <EmbeddedResource Include="View\Cadastro\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CadastroClientes.resx">
+    <EmbeddedResource Include="View\Cadastro\CadastroClientes.resx">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ExibirCliente.resx">
+    <EmbeddedResource Include="View\Cadastro\ExibirCliente.resx">
       <DependentUpon>ExibirCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Usuarios.resx">
+    <EmbeddedResource Include="View\Cadastro\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Veiculos.resx">
+    <EmbeddedResource Include="View\Cadastro\Veiculos.resx">
       <DependentUpon>Veiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CadastroVeiculos.resx">
+    <EmbeddedResource Include="View\Cadastro\CadastroVeiculos.resx">
       <DependentUpon>CadastroVeiculos.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -438,6 +444,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Utilitario\AjustarTabelas.resx">
+      <DependentUpon>AjustarTabelas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.datasource" />
@@ -553,7 +562,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="View\ReportEmpregados.rdlc">
+    <EmbeddedResource Include="View\Relatorio\ReportEmpregados.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -569,6 +578,7 @@
       <Name>Persistencia</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

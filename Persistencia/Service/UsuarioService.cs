@@ -78,7 +78,7 @@ namespace Persistencia.Service
                             permissao.Descricao = (permissao.Tipo == 1) ? "Administrador" : "Comum";
 
                             Usuario user = new Usuario();
-                            user.CodigoUsuario = cod_user;
+                            user.Id = cod_user;
                             user.Nome = nome;
                             user.RG = rg;
                             user.CPF = cpf;
@@ -107,7 +107,7 @@ namespace Persistencia.Service
         {
             bool remover = false;
             Usuario user = new Usuario();
-            user.CodigoUsuario = cod_user;
+            user.Id = cod_user;
             user.Status = 9;
             if (userDAO.Remover(user))
             {
@@ -120,7 +120,7 @@ namespace Persistencia.Service
         public bool Inativar(long cod_user)
         {
             Usuario user = new Usuario();
-            user.CodigoUsuario = cod_user;
+            user.Id = cod_user;
             user.Status = 2;
             return userDAO.Remover(user);
         }
@@ -128,7 +128,7 @@ namespace Persistencia.Service
         public bool Ativar(long cod_user)
         {
             Usuario user = new Usuario();
-            user.CodigoUsuario = cod_user;
+            user.Id = cod_user;
             user.Status = 1;
             return userDAO.Remover(user);
         }
@@ -144,7 +144,7 @@ namespace Persistencia.Service
         public Usuario Busca(long id)
         {
             foreach (Usuario user in Listar())
-                if (user.CodigoUsuario.Equals(id))
+                if (user.Id.Equals(id))
                     return user;
             return null;
         }

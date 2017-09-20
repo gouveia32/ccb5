@@ -93,9 +93,9 @@ namespace Persistencia.Service
                         fornecedor.Email = email;
 
                         long id_endereco = new EnderecoDAO().Inserir(endereco);
-                        fornecedor.CodigoEndereco = id_endereco;
+                        fornecedor.EnderecoId = id_endereco;
                         id_fornecedor = new FornecedorDAO().Inserir(fornecedor);
-                        telefoneF.CodigoFornecedor = id_fornecedor;
+                        telefoneF.Id = id_fornecedor;
                         new TelefoneFornecedorDAO().Inserir(telefoneF);
                         transaction.Complete();
                     }
@@ -174,7 +174,7 @@ namespace Persistencia.Service
                         Endereco end = new Endereco();
                         TelefoneFornecedor tel = new TelefoneFornecedor();
 
-                        f.CodigoFornecedor = CodigoFornecedor;
+                        f.Id = CodigoFornecedor;
                         f.NomeFantasia = nomefantasia;
                         f.RazaoSocial = razaosocial;
                         f.CNPJ = cnpj;
@@ -182,7 +182,7 @@ namespace Persistencia.Service
                         f.Email = email;
 
                         Fornecedor fornecedor = new FornecedorDAO().Buscar(CodigoFornecedor);
-                        end.CodigoEndereco = fornecedor.CodigoEndereco;
+                        end.Id = fornecedor.EnderecoId;
                         end.CEP = cep;
                         end.Logradouro = logradouro;
                         end.Bairro = bairro;
@@ -190,7 +190,7 @@ namespace Persistencia.Service
                         end.Cidade = cidade;
                         end.Estado = estado;
 
-                        tel.CodigoFornecedor = CodigoFornecedor;
+                        tel.Id = CodigoFornecedor;
                         tel.Telefone = telefone + ":" + celular;
 
                         new FornecedorDAO().Atualizar(f);
@@ -223,14 +223,14 @@ namespace Persistencia.Service
                     {
                         Fornecedor f = new Fornecedor();
 
-                        f.CodigoFornecedor = CodigoFornecedor;
+                        f.Id = CodigoFornecedor;
                         f.Status = 9;
 
                         new FornecedorDAO().Remover(f);
 
                         TelefoneFornecedor tel = new TelefoneFornecedor();
 
-                        tel.CodigoFornecedor = CodigoFornecedor;
+                        tel.Id = CodigoFornecedor;
                         tel.Status = 9;
 
                         new TelefoneFornecedorDAO().Remover(tel);
@@ -238,7 +238,7 @@ namespace Persistencia.Service
                         Endereco end = new Endereco();
 
                         Fornecedor fornecedor = new FornecedorDAO().Buscar(CodigoFornecedor);
-                        end.CodigoEndereco = fornecedor.CodigoEndereco;
+                        end.Id = fornecedor.EnderecoId;
                         end.Status = 9;
 
                         new EnderecoDAO().Remover(end);

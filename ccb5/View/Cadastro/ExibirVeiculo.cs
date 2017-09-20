@@ -41,7 +41,7 @@ namespace ccb5
 
             //Fornecedor
             textBox_Fornecedor.Text = fornecedor.NomeFantasia;
-            codForSelecionado = fornecedor.CodigoFornecedor;
+            codForSelecionado = fornecedor.Id;
 
 
             //Categoria

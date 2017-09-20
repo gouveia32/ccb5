@@ -58,7 +58,7 @@ namespace ccb5
             {
                 int index = dataGrid_Usuario.Rows.Add();
                 DataGridViewRow dado = dataGrid_Usuario.Rows[index];
-                dado.Cells["Código"].Value = user.CodigoUsuario;
+                dado.Cells["Código"].Value = user.Id;
                 dado.Cells["Nome"].Value = user.Nome;
                 dado.Cells["Login"].Value = user.Login;
                 dado.Cells["RG"].Value = user.RG;
@@ -75,7 +75,7 @@ namespace ccb5
                 {
                     int index = dataGrid_Usuario.Rows.Add();
                     DataGridViewRow dado = dataGrid_Usuario.Rows[index];
-                    dado.Cells["Código"].Value = user.CodigoUsuario;
+                    dado.Cells["Código"].Value = user.Id;
                     dado.Cells["Nome"].Value = user.Nome;
                     dado.Cells["Login"].Value = user.Login;
                     dado.Cells["RG"].Value = user.RG;
@@ -91,7 +91,7 @@ namespace ccb5
             {
                 int index = dataGrid_Usuario.Rows.Add();
                 DataGridViewRow dado = dataGrid_Usuario.Rows[index];
-                dado.Cells["Código"].Value = user.CodigoUsuario;
+                dado.Cells["Código"].Value = user.Id;
                 dado.Cells["Nome"].Value = user.Nome;
                 dado.Cells["Login"].Value = user.Login;
                 dado.Cells["RG"].Value = user.RG;

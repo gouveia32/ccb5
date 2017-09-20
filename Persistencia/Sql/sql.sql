@@ -78,7 +78,7 @@ CREATE TABLE `cliente` (
   `COD_CLIENTE` int(11) NOT NULL AUTO_INCREMENT,
   `EMAIL` varchar(50) NOT NULL,
   `STATUS` int(11) DEFAULT '1',
-  `COD_ENDERECO` int(11) DEFAULT NULL,
+  `ENDERECO_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`COD_CLIENTE`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -133,7 +133,7 @@ DROP TABLE IF EXISTS `endereco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `endereco` (
-  `COD_ENDERECO` int(11) NOT NULL AUTO_INCREMENT,
+  `ENDERECO_ID` int(11) NOT NULL AUTO_INCREMENT,
   `CEP` varchar(20) NOT NULL,
   `BAIRRO` varchar(50) NOT NULL,
   `LOGRADOURO` varchar(70) NOT NULL,
@@ -141,7 +141,7 @@ CREATE TABLE `endereco` (
   `CIDADE` varchar(50) NOT NULL,
   `ESTADO` varchar(5) NOT NULL,
   `STATUS` int(11) DEFAULT '1',
-  PRIMARY KEY (`COD_ENDERECO`)
+  PRIMARY KEY (`ENDERECO_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -169,11 +169,11 @@ CREATE TABLE `fornecedor` (
   `CNPJ` varchar(20) NOT NULL,
   `INSCRICAO_ESTADUAL` varchar(50) NOT NULL,
   `EMAIL` varchar(50) NOT NULL,
-  `COD_ENDERECO` int(11) NOT NULL,
+  `ENDERECO_ID` int(11) NOT NULL,
   `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_FORNECEDOR`),
-  KEY `COD_ENDERECO` (`COD_ENDERECO`),
-  CONSTRAINT `fornecedor_ibfk_1` FOREIGN KEY (`COD_ENDERECO`) REFERENCES `endereco` (`COD_ENDERECO`)
+  KEY `ENDERECO_ID` (`ENDERECO_ID`),
+  CONSTRAINT `fornecedor_ibfk_1` FOREIGN KEY (`ENDERECO_ID`) REFERENCES `endereco` (`ENDERECO_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -642,13 +642,13 @@ CREATE TABLE `empregado` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NOME` varchar(50) NOT NULL,
   `EMAIL` varchar(50) NOT NULL,
-  `COD_ENDERECO` int(11) NOT NULL,
+  `ENDERECO_ID` int(11) NOT NULL,
   `STATUS` int(11) DEFAULT '1',
   `DATA_NASCIMENTO` date NOT NULL,
   `DATA_ADMISSAO` date NOT NULL,
   `DATA_DEMISSAO` date NOT NULL,
   PRIMARY KEY (`ID`),
-  KEY `COD_ENDERECO` (`COD_ENDERECO`),
-  CONSTRAINT `empregado_ibfk_1` FOREIGN KEY (`COD_ENDERECO`) REFERENCES `endereco` (`COD_ENDERECO`)
+  KEY `ENDERECO_ID` (`ENDERECO_ID`),
+  CONSTRAINT `empregado_ibfk_1` FOREIGN KEY (`ENDERECO_ID`) REFERENCES `endereco` (`ENDERECO_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

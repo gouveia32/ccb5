@@ -60,9 +60,9 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE USUARIO SET STATUS = @STATUS WHERE COD_USUARIO = @COD_USUARIO";
+                    comando.CommandText = "UPDATE USUARIO SET STATUS = @STATUS WHERE ID = @ID";
 
-                    comando.Parameters.Add("@COD_USUARIO", MySqlDbType.Int16).Value = user.CodigoUsuario;
+                    comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = user.Id;
                     comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = user.Status;
 
                     if (comando.ExecuteNonQuery() > 0)
@@ -87,9 +87,9 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE USUARIO SET NOME = @NOME, CPF = @CPF,RG = @RG, LOGIN = @LOGIN, SENHA = @SENHA, COD_PERMISSAO = @COD_PERMISSAO WHERE COD_USUARIO = @COD_USUARIO;";
+                    comando.CommandText = "UPDATE USUARIO SET NOME = @NOME, CPF = @CPF,RG = @RG, LOGIN = @LOGIN, SENHA = @SENHA, COD_PERMISSAO = @COD_PERMISSAO WHERE ID = @ID;";
 
-                    comando.Parameters.Add("@COD_USUARIO", MySqlDbType.Int16).Value = user.CodigoUsuario;
+                    comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = user.Id;
                     comando.Parameters.Add("@NOME", MySqlDbType.Text).Value = user.Nome;
                     comando.Parameters.Add("@CPF", MySqlDbType.Text).Value = user.CPF;
                     comando.Parameters.Add("@RG", MySqlDbType.Text).Value = user.RG;
@@ -120,13 +120,13 @@ namespace Persistencia.DAO
                 {
                     List<Usuario> users = new List<Usuario>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_USUARIO,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT ID,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9;";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while(leitor.Read())
                     {
                         Usuario user = new Usuario();
-                        user.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
+                        user.Id = Int16.Parse(leitor["ID"].ToString());
                         user.Nome = leitor["NOME"].ToString();
                         user.CPF = leitor["CPF"].ToString();
                         user.RG = leitor["RG"].ToString();
@@ -158,14 +158,14 @@ namespace Persistencia.DAO
                 {
                     List<Usuario> users = new List<Usuario>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_USUARIO,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE (NOME LIKE '%' @BUSCA '%' OR LOGIN LIKE '%' @BUSCA '%' OR RG LIKE '%' @BUSCA '%' OR CPF LIKE '%' @BUSCA '%' ) AND STATUS <> 9;";
+                    comando.CommandText = "SELECT ID,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE (NOME LIKE '%' @BUSCA '%' OR LOGIN LIKE '%' @BUSCA '%' OR RG LIKE '%' @BUSCA '%' OR CPF LIKE '%' @BUSCA '%' ) AND STATUS <> 9;";
                     comando.Parameters.Add("@BUSCA", MySqlDbType.Text).Value = buscar;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())
                     {
                         Usuario user = new Usuario();
-                        user.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
+                        user.Id = Int16.Parse(leitor["ID"].ToString());
                         user.Nome = leitor["NOME"].ToString();
                         user.CPF = leitor["CPF"].ToString();
                         user.RG = leitor["RG"].ToString();
@@ -198,14 +198,14 @@ namespace Persistencia.DAO
                 {
                     Usuario user = new Usuario();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_USUARIO,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9 AND COD_USUARIO = @COD_USUARIO;";
+                    comando.CommandText = "SELECT ID,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9 AND ID = @ID;";
 
-                    comando.Parameters.Add("@COD_USUARIO",MySqlDbType.Int16).Value = cod;
+                    comando.Parameters.Add("@ID",MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())
                     {
-                        user.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
+                        user.Id = Int16.Parse(leitor["ID"].ToString());
                         user.Nome = leitor["NOME"].ToString();
                         user.CPF = leitor["CPF"].ToString();
                         user.RG = leitor["RG"].ToString();
@@ -235,14 +235,14 @@ namespace Persistencia.DAO
                 {
                     Usuario user = new Usuario();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_USUARIO,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9 AND LOGIN = @LOGIN;";
+                    comando.CommandText = "SELECT ID,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9 AND LOGIN = @LOGIN;";
 
                     comando.Parameters.Add("@LOGIN", MySqlDbType.Text).Value = login;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())
                     {
-                        user.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
+                        user.Id = Int16.Parse(leitor["ID"].ToString());
                         user.Nome = leitor["NOME"].ToString();
                         user.CPF = leitor["CPF"].ToString();
                         user.RG = leitor["RG"].ToString();
@@ -272,14 +272,14 @@ namespace Persistencia.DAO
                 {
                     Usuario user = new Usuario();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_USUARIO,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9 AND LOGIN = @LOGIN;";
+                    comando.CommandText = "SELECT ID,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9 AND LOGIN = @LOGIN;";
 
                     comando.Parameters.Add("@LOGIN", MySqlDbType.String).Value = login;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())
                     {
-                        user.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
+                        user.Id = Int16.Parse(leitor["ID"].ToString());
                         user.Nome = leitor["NOME"].ToString();
                         user.CPF = leitor["CPF"].ToString();
                         user.RG = leitor["RG"].ToString();

@@ -27,10 +27,10 @@ namespace ccb5
 
         private void toolStripButton_Salvar_Click(object sender, EventArgs e)
         {
-            DialogResult result2 = MessageBox.Show("Deseja salvar o novo cadastro?",
-           "Salvar novo cadastro",
-           MessageBoxButtons.OKCancel,
-           MessageBoxIcon.Question);
+            DialogResult result2 = MessageBox.Show( "Deseja salvar o novo cadastro?",
+                                                    "Salvar novo cadastro",
+                                                    MessageBoxButtons.OKCancel,
+                                                    MessageBoxIcon.Question);
             if (result2 == DialogResult.OK)
             {
                 if (new EmpregadoService().Inserir(

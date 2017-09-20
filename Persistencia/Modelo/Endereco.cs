@@ -8,7 +8,7 @@ namespace Persistencia.Modelo
 {
     public class Endereco
     {
-        public long CodigoEndereco { get; set; }
+        public long Id { get; set; }
         public string CEP { get; set; }
         public string Bairro { get; set; }
         public string Logradouro { get; set; }

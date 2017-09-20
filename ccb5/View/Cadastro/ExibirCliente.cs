@@ -28,8 +28,8 @@ namespace ccb5
 
             Cliente cliente = new ClienteService().Buscar(codigo);
         
-            PessoaFisica pessoaFisica = new ClienteService().BuscarPessoaFisica(cliente.CodigoCliente);
-            PessoaJuridica pessoaJuridica = new ClienteService().BuscarPessoaJuridica(cliente.CodigoCliente);
+            PessoaFisica pessoaFisica = new ClienteService().BuscarPessoaFisica(cliente.Id);
+            PessoaJuridica pessoaJuridica = new ClienteService().BuscarPessoaJuridica(cliente.Id);
 
             radioButton_PessoaFisica.Enabled = false;
             radioButton_PessoaJuridica.Enabled = false;
@@ -61,7 +61,7 @@ namespace ccb5
                 textBox_RazaoSocial.Text = pessoaJuridica.RazaoSocial;
                 textBox_NomeFantasia.Text = pessoaJuridica.NomeFantasia;
 
-                TelefoneCliente telefoneCliente = new ClienteService().BuscarTelefoneFornecedor(codigo);
+                TelefoneCliente telefoneCliente = new ClienteService().BuscarTelefoneCliente(codigo);
                 textBox_Telefone.Text = telefoneCliente.Telefone;
             }
             else
@@ -70,7 +70,7 @@ namespace ccb5
                 this.Close();
             }
 
-            preencheEndereco(cliente.CodigoEndereco);
+            preencheEndereco(cliente.EnderecoId);
             textBox_Email.Text = cliente.Email;
 
         }

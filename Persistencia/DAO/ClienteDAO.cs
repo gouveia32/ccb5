@@ -27,10 +27,10 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "INSERT INTO CLIENTE(EMAIL,COD_ENDERECO) VALUES (@EMAIL,@COD_ENDERECO);";
+                    comando.CommandText = "INSERT INTO CLIENTE(EMAIL,ENDERECO_ID) VALUES (@EMAIL,@ENDERECO_ID);";
 
                     comando.Parameters.Add("@EMAIL", MySqlDbType.Text).Value = cliente.Email;
-                    comando.Parameters.Add("@COD_ENDERECO", MySqlDbType.Text).Value = cliente.CodigoEndereco;
+                    comando.Parameters.Add("@ENDERECO_ID", MySqlDbType.Text).Value = cliente.EnderecoId;
 
                     if (comando.ExecuteNonQuery() > 0)
                         return comando.LastInsertedId;
@@ -54,9 +54,9 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE CLIENTE SET STATUS = @STATUS WHERE COD_CLIENTE = @COD_CLIENTE";
+                    comando.CommandText = "UPDATE CLIENTE SET STATUS = @STATUS WHERE ID = @ID";
 
-                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = cliente.CodigoCliente;
+                    comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = cliente.Id;
                     comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = cliente.Status;
 
                     if (comando.ExecuteNonQuery() > 0)
@@ -81,9 +81,9 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE CLIENTE SET EMAIL = @EMAIL WHERE COD_CLIENTE = @COD_CLIENTE;";
+                    comando.CommandText = "UPDATE CLIENTE SET EMAIL = @EMAIL WHERE ID = @ID;";
 
-                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = cliente.CodigoCliente;
+                    comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = cliente.Id;
                     comando.Parameters.Add("@EMAIL", MySqlDbType.Text).Value = cliente.Email;
 
                     if (comando.ExecuteNonQuery() > 0)
@@ -109,15 +109,15 @@ namespace Persistencia.DAO
                 {
                     List<Cliente> clientes = new List<Cliente>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_CLIENTE,EMAIL,COD_ENDERECO,STATUS FROM CLIENTE WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT ID,EMAIL,ENDERECO_ID,STATUS FROM CLIENTE WHERE STATUS <> 9;";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())
                     {
                         Cliente cliente = new Cliente();
-                        cliente.CodigoCliente = Int16.Parse(leitor["COD_CLIENTE"].ToString());
+                        cliente.Id = Int16.Parse(leitor["ID"].ToString());
                         cliente.Email = leitor["EMAIL"].ToString();
-                        cliente.CodigoEndereco = Int16.Parse(leitor["COD_ENDERECO"].ToString());
+                        cliente.EnderecoId = Int16.Parse(leitor["ENDERECO_ID"].ToString());
                         cliente.Status = Int16.Parse(leitor["STATUS"].ToString());
 
                         clientes.Add(cliente);
@@ -144,16 +144,16 @@ namespace Persistencia.DAO
                 {
                     Cliente cliente = new Cliente();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_CLIENTE,EMAIL,COD_ENDERECO,STATUS FROM CLIENTE WHERE STATUS <> 9 AND COD_CLIENTE = @COD_CLIENTE;";
+                    comando.CommandText = "SELECT ID,EMAIL,ENDERECO_ID,STATUS FROM CLIENTE WHERE STATUS <> 9 AND ID = @ID;";
 
-                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = cod;
+                    comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())
                     {
-                        cliente.CodigoCliente = Int16.Parse(leitor["COD_CLIENTE"].ToString());
+                        cliente.Id = Int16.Parse(leitor["ID"].ToString());
                         cliente.Email = leitor["EMAIL"].ToString();
-                        cliente.CodigoEndereco = Int16.Parse(leitor["COD_ENDERECO"].ToString());
+                        cliente.EnderecoId = Int16.Parse(leitor["ENDERECO_ID"].ToString());
                         cliente.Status = Int16.Parse(leitor["STATUS"].ToString());
                     }
 

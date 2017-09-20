@@ -51,7 +51,7 @@ namespace Persistencia.Service
             {
                 try
                 {
-                    if (codveiculo != 0 && codcliente != 0 && dataretirada != null && dataentrega != null && tiporetirada != "" && formapagamento != "" && Decimal.Parse(valorpedido) != 0 && usuario.CodigoUsuario != 0)
+                    if (codveiculo != 0 && codcliente != 0 && dataretirada != null && dataentrega != null && tiporetirada != "" && formapagamento != "" && Decimal.Parse(valorpedido) != 0 && usuario.Id != 0)
                     {
                         Reserva reserva = new Reserva();
                         Veiculo veiculo = new VeiculoDAO().Buscar(codveiculo);
@@ -61,7 +61,7 @@ namespace Persistencia.Service
 
                         reserva.CodigoCliente = codcliente;
                         reserva.CodigoVeiculo = codveiculo;
-                        reserva.CodigoUsuario = usuario.CodigoUsuario;
+                        reserva.CodigoUsuario = usuario.Id;
                         reserva.DataEntrega = dataentrega.ToString(); ;
                         reserva.DataRetirada = dataretirada.ToString(); ;
                         reserva.TipoRetirada = tiporetirada;

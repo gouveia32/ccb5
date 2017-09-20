@@ -27,11 +27,11 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "INSERT INTO EMPREGADO(NOME,EMAIL,COD_ENDERECO,DATA_NASCIMENTO,DATA_ADMISSAO,DATA_DEMISSAO) VALUES (@NOME,@EMAIL,@COD_ENDERECO,@DATA_NASCIMENTO,@DATA_ADMISSAO,@DATA_DEMISSAO);";
+                    comando.CommandText = "INSERT INTO EMPREGADO(NOME,EMAIL,ENDERECO_ID,DATA_NASCIMENTO,DATA_ADMISSAO,DATA_DEMISSAO) VALUES (@NOME,@EMAIL,@ENDERECO_ID,@DATA_NASCIMENTO,@DATA_ADMISSAO,@DATA_DEMISSAO);";
 
                     comando.Parameters.Add("@EMAIL", MySqlDbType.Text).Value = empregado.Email;
                     comando.Parameters.Add("@NOME", MySqlDbType.Text).Value = empregado.Nome;
-                    comando.Parameters.Add("@COD_ENDERECO", MySqlDbType.Text).Value = empregado.CodigoEndereco;
+                    comando.Parameters.Add("@ENDERECO_ID", MySqlDbType.Text).Value = empregado.EnderecoId;
                     comando.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Text).Value = empregado.DataNascimento;
                     comando.Parameters.Add("@DATA_ADMISSAO", MySqlDbType.Text).Value = empregado.DataAdmissao;
                     comando.Parameters.Add("@DATA_DEMISSAO", MySqlDbType.Text).Value = empregado.DataDemissao;
@@ -116,7 +116,7 @@ namespace Persistencia.DAO
                 {
                     List<Empregado> empregados = new List<Empregado>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT ID,NOME,EMAIL,COD_ENDERECO,STATUS,DATA_NASCIMENTO,DATA_ADMISSAO,DATA_DEMISSAO FROM EMPREGADO WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT ID,NOME,EMAIL,ENDERECO_ID,STATUS,DATA_NASCIMENTO,DATA_ADMISSAO,DATA_DEMISSAO FROM EMPREGADO WHERE STATUS <> 9;";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())
@@ -125,7 +125,7 @@ namespace Persistencia.DAO
                         empregado.Id = Int16.Parse(leitor["ID"].ToString());
                         empregado.Nome = leitor["NOME"].ToString();
                         empregado.Email = leitor["EMAIL"].ToString();
-                        empregado.CodigoEndereco = Int16.Parse(leitor["COD_ENDERECO"].ToString());
+                        empregado.EnderecoId = Int16.Parse(leitor["ENDERECO_ID"].ToString());
                         empregado.Status = Int16.Parse(leitor["STATUS"].ToString());
                         empregado.DataNascimento = leitor["DATA_NASCIMENTO"].ToString();
                         empregado.DataAdmissao = leitor["DATA_ADMISSAO"].ToString();
@@ -155,7 +155,7 @@ namespace Persistencia.DAO
                 {
                     Empregado empregado = new Empregado();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT ID,NOME,EMAIL,COD_ENDERECO,STATUS,DATA_NASCIMENTO,DATA_ADMISSAO,DATA_DEMISSAO FROM EMPREGADO WHERE STATUS <> 9 AND ID = @ID;";
+                    comando.CommandText = "SELECT ID,NOME,EMAIL,ENDERECO_ID,STATUS,DATA_NASCIMENTO,DATA_ADMISSAO,DATA_DEMISSAO FROM EMPREGADO WHERE STATUS <> 9 AND ID = @ID;";
 
                     comando.Parameters.Add("@ID", MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
@@ -168,7 +168,7 @@ namespace Persistencia.DAO
                         empregado.DataNascimento = leitor["DATA_NASCIMENTO"].ToString();
                         empregado.DataAdmissao = leitor["DATA_ADMISSAO"].ToString();
                         empregado.DataDemissao = leitor["DATA_DEMISSAO"].ToString();
-                        empregado.CodigoEndereco = Int16.Parse(leitor["COD_ENDERECO"].ToString());
+                        empregado.EnderecoId = Int16.Parse(leitor["ENDERECO_ID"].ToString());
                         empregado.Status = Int16.Parse(leitor["STATUS"].ToString());
                     }
 

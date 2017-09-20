@@ -112,13 +112,13 @@ namespace Persistencia.DAO
                 {
                     List<TelefoneEmpregado> telefones = new List<TelefoneEmpregado>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_TELEFONE_EMPREGADO,TELEFONE,STATUS FROM TELEFONE_EMPREGADO WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT ID,TELEFONE,STATUS FROM TELEFONE_EMPREGADO WHERE STATUS <> 9;";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())
                     {
                         TelefoneEmpregado telefone = new TelefoneEmpregado();
-                        telefone.CodigoTelefoneEmpregado = Int16.Parse(leitor["COD_TELEFONE_EMPREGADO"].ToString());
+                        telefone.Id = Int16.Parse(leitor["ID"].ToString());
                         telefone.Telefone = leitor["TELEFONE"].ToString();
                         telefone.Status = Int16.Parse(leitor["STATUS"].ToString());
 

@@ -8,9 +8,9 @@ namespace Persistencia.Modelo
 {
     public class Cliente
     {
-        public long CodigoCliente{get; set;}
+        public long Id{get; set;}
         public string Email { get; set; }
-        public long CodigoEndereco { get; set; }
+        public long EnderecoId { get; set; }
         public int Status { get; set; }
     }
 }

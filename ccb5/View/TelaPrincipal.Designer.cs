@@ -38,11 +38,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Categorias = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Clientes = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Fornecedores = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEmpregado = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Usuarios = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,13 +52,16 @@
             this.toolStripButton_Sobre = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripSplitButton();
             this.statusLogin = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveFileDialog_Exportar = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog_Importar = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripButton_Cadastros = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItemCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemFornecedor = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEmpregado = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.statusLogin.SuspendLayout();
             this.SuspendLayout();
@@ -83,11 +81,7 @@
             this.toolStripSeparator4,
             this.toolStripButton_Categorias,
             this.toolStripSeparator5,
-            this.toolStripButton_Clientes,
-            this.toolStripSeparator6,
-            this.toolStripButton_Fornecedores,
-            this.toolStripSeparator1,
-            this.btnEmpregado,
+            this.toolStripButton_Cadastros,
             this.toolStripSeparator13,
             this.toolStripButton_Usuarios,
             this.toolStripSeparator7,
@@ -99,8 +93,7 @@
             this.toolStripSeparator10,
             this.toolStripButton_Sobre,
             this.toolStripSeparator8,
-            this.toolStripButton_Sair,
-            this.toolStripSeparator9});
+            this.toolStripButton_Sair});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -189,60 +182,6 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(3, 70);
             // 
-            // toolStripButton_Clientes
-            // 
-            this.toolStripButton_Clientes.AutoSize = false;
-            this.toolStripButton_Clientes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Clientes.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.toolStripButton_Clientes.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Clientes.Image")));
-            this.toolStripButton_Clientes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolStripButton_Clientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Clientes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Clientes.Name = "toolStripButton_Clientes";
-            this.toolStripButton_Clientes.Size = new System.Drawing.Size(95, 70);
-            this.toolStripButton_Clientes.Text = "&Clientes";
-            this.toolStripButton_Clientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Clientes.Click += new System.EventHandler(this.toolStripButton_Clientes_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.AutoSize = false;
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripButton_Fornecedores
-            // 
-            this.toolStripButton_Fornecedores.AutoSize = false;
-            this.toolStripButton_Fornecedores.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Fornecedores.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.toolStripButton_Fornecedores.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Fornecedores.Image")));
-            this.toolStripButton_Fornecedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Fornecedores.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Fornecedores.Name = "toolStripButton_Fornecedores";
-            this.toolStripButton_Fornecedores.Size = new System.Drawing.Size(95, 70);
-            this.toolStripButton_Fornecedores.Text = "&Fornecedores";
-            this.toolStripButton_Fornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Fornecedores.Click += new System.EventHandler(this.toolStripButton_Fornecedores_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.AutoSize = false;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(3, 70);
-            // 
-            // btnEmpregado
-            // 
-            this.btnEmpregado.AutoSize = false;
-            this.btnEmpregado.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpregado.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpregado.Image")));
-            this.btnEmpregado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnEmpregado.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEmpregado.Name = "btnEmpregado";
-            this.btnEmpregado.Size = new System.Drawing.Size(95, 70);
-            this.btnEmpregado.Text = "Empregado";
-            this.btnEmpregado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEmpregado.Click += new System.EventHandler(this.btnEmpregado_Click);
-            // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
@@ -328,14 +267,14 @@
             // importarToolStripMenuItem
             // 
             this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(160, 28);
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(181, 28);
             this.importarToolStripMenuItem.Text = "Importar";
             this.importarToolStripMenuItem.Click += new System.EventHandler(this.importarToolStripMenuItem_Click);
             // 
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(160, 28);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(181, 28);
             this.exportarToolStripMenuItem.Text = "Exportar";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
             // 
@@ -380,12 +319,6 @@
             this.toolStripButton_Sair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton_Sair.Click += new System.EventHandler(this.toolStripButton_Sair_Click);
             // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.AutoSize = false;
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(3, 70);
-            // 
             // toolStripButton5
             // 
             this.toolStripButton5.Name = "toolStripButton5";
@@ -413,12 +346,52 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(193, 20);
-            this.toolStripStatusLabel2.Text = "          Empresa: Alugue Fácil";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(251, 20);
+            this.toolStripStatusLabel2.Text = "          Empresa: Ponto Fino Bordados";
             // 
             // openFileDialog_Importar
             // 
             this.openFileDialog_Importar.FileName = "openFileDialog1";
+            // 
+            // toolStripButton_Cadastros
+            // 
+            this.toolStripButton_Cadastros.AutoSize = false;
+            this.toolStripButton_Cadastros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemCliente,
+            this.toolStripMenuItemFornecedor,
+            this.toolStripMenuItemEmpregado});
+            this.toolStripButton_Cadastros.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Cadastros.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Cadastros.Image")));
+            this.toolStripButton_Cadastros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton_Cadastros.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Cadastros.Name = "toolStripButton_Cadastros";
+            this.toolStripButton_Cadastros.Size = new System.Drawing.Size(88, 70);
+            this.toolStripButton_Cadastros.Text = "Cadastros";
+            this.toolStripButton_Cadastros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripMenuItemCliente
+            // 
+            this.toolStripMenuItemCliente.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemCliente.Image")));
+            this.toolStripMenuItemCliente.Name = "toolStripMenuItemCliente";
+            this.toolStripMenuItemCliente.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItemCliente.Text = "Cliente";
+            this.toolStripMenuItemCliente.Click += new System.EventHandler(this.toolStripMenuItemCliente_Click);
+            // 
+            // toolStripMenuItemFornecedor
+            // 
+            this.toolStripMenuItemFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemFornecedor.Image")));
+            this.toolStripMenuItemFornecedor.Name = "toolStripMenuItemFornecedor";
+            this.toolStripMenuItemFornecedor.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItemFornecedor.Text = "Fornecedor";
+            this.toolStripMenuItemFornecedor.Click += new System.EventHandler(this.toolStripMenuItemFornecedor_Click);
+            // 
+            // toolStripMenuItemEmpregado
+            // 
+            this.toolStripMenuItemEmpregado.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItemEmpregado.Image")));
+            this.toolStripMenuItemEmpregado.Name = "toolStripMenuItemEmpregado";
+            this.toolStripMenuItemEmpregado.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItemEmpregado.Text = "Empregado";
+            this.toolStripMenuItemEmpregado.Click += new System.EventHandler(this.toolStripMenuItemEmpregado_Click);
             // 
             // TelaPrincipal
             // 
@@ -450,7 +423,6 @@
 
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Clientes;
         private System.Windows.Forms.ToolStripButton toolStripButton_Veiculos;
         private System.Windows.Forms.ToolStripButton toolStripButton_Relatorios;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
@@ -460,12 +432,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripSplitButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sobre;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Fornecedores;
         private System.Windows.Forms.ToolStripButton toolStripButton_Usuarios;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
@@ -482,8 +450,11 @@
         private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog_Exportar;
         private System.Windows.Forms.OpenFileDialog openFileDialog_Importar;
-        private System.Windows.Forms.ToolStripButton btnEmpregado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton_Cadastros;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCliente;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFornecedor;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEmpregado;
     }
 }
 

@@ -66,12 +66,6 @@ namespace Persistencia.Service
             return telefoneCliente;
         }
 
-        public TelefoneCliente BuscarTelefoneFornecedor(long cod)
-        {
-            TelefoneCliente telefoneFornecedor = new TelefoneClienteDAO().BuscarTelefoneFornecedor(cod);
-            return telefoneFornecedor;
-        }
-
         public PessoaFisica BuscarPessoaFisica(long codCliente)
         {
             PessoaFisica pessoaFisica = new PessoaFisicaDAO().BuscarPorCliente(codCliente);
@@ -175,7 +169,7 @@ namespace Persistencia.Service
 
                             id_endereco = enderecoDAO.Inserir(endereco);
 
-                            cliente.CodigoEndereco = id_endereco;
+                            cliente.EnderecoId = id_endereco;
                             cliente.Email = email;
                             cliente.Status = 1;
 
@@ -193,7 +187,7 @@ namespace Persistencia.Service
 
                             id_pessoaFisica = pFisicaDAO.Inserir(pFisica);
 
-                            telefoneCliente.CodigoCliente = pFisica.CodigoCliente;
+                            telefoneCliente.Id = pFisica.CodigoCliente;
                             telefoneCliente.Telefone = telefone;
 
                             telefoneCliente.Status = 1;
@@ -282,7 +276,7 @@ namespace Persistencia.Service
 
                             id_endereco = enderecoDAO.Inserir(endereco);
 
-                            cliente.CodigoEndereco = id_endereco;
+                            cliente.EnderecoId = id_endereco;
                             cliente.Email = email;
                             cliente.Status = 1;
 
@@ -297,7 +291,7 @@ namespace Persistencia.Service
 
                             id_pessoaJuridica = pJuridicaDAO.Inserir(pJuridica);
 
-                            telefoneFornecedor.CodigoFornecedor = pJuridica.CodigoCliente;
+                            telefoneFornecedor.Id = pJuridica.CodigoCliente;
                             telefoneFornecedor.Telefone = telefone;
                             telefoneFornecedor.Status = 1;
 
@@ -390,10 +384,10 @@ namespace Persistencia.Service
                             Endereco endereco = new Endereco();
                             TelefoneCliente telefoneCliente = new TelefoneCliente();
 
-                            cliente.CodigoCliente = codigoCliente;
+                            cliente.Id = codigoCliente;
 
                             pFisica.CNH = cnh;
-                            pFisica.CodigoCliente = cliente.CodigoCliente;
+                            pFisica.CodigoCliente = cliente.Id;
                             pFisica.CPF = cpf;
                             pFisica.DataNascimento = dataNascimento;
                             pFisica.Naturalidade = naturalidade;
@@ -410,10 +404,10 @@ namespace Persistencia.Service
                             endereco.Numero = numero;
                             endereco.Status = 1;
 
-                            Cliente clienteCodEnd = new ClienteDAO().Buscar(cliente.CodigoCliente);
-                            endereco.CodigoEndereco = clienteCodEnd.CodigoEndereco;
+                            Cliente clienteCodEnd = new ClienteDAO().Buscar(cliente.Id);
+                            endereco.Id = clienteCodEnd.EnderecoId;
 
-                            telefoneCliente.CodigoCliente = cliente.CodigoCliente;
+                            telefoneCliente.Id = cliente.Id;
                             telefoneCliente.Telefone = telefone;
                             telefoneCliente.Status = 1;
 
@@ -496,10 +490,10 @@ namespace Persistencia.Service
                             Endereco endereco = new Endereco();
                             TelefoneFornecedor telefoneFornecedor = new TelefoneFornecedor();
 
-                            cliente.CodigoCliente = codigoCliente;
+                            cliente.Id = codigoCliente;
                             
                             pJuridica.CNPJ = cnpj;
-                            pJuridica.CodigoCliente = cliente.CodigoCliente;
+                            pJuridica.CodigoCliente = cliente.Id;
                             pJuridica.InscricaoEstadual = inscricaoEstadual;
                             pJuridica.NomeFantasia = nomeFantasia;
                             pJuridica.RazaoSocial = razaoSocial;
@@ -513,14 +507,14 @@ namespace Persistencia.Service
                             endereco.Numero = numero;
                             endereco.Status = 1;
                             
-                            Cliente clienteCodEnd = new ClienteDAO().Buscar(cliente.CodigoCliente);
-                            endereco.CodigoEndereco = clienteCodEnd.CodigoEndereco;
+                            Cliente clienteCodEnd = new ClienteDAO().Buscar(cliente.Id);
+                            endereco.Id = clienteCodEnd.EnderecoId;
                             
-                            cliente.CodigoEndereco = endereco.CodigoEndereco;
+                            cliente.EnderecoId = endereco.Id;
                             cliente.Email = email;
                             cliente.Status = 1;
                             
-                            telefoneFornecedor.CodigoFornecedor = pJuridica.CodigoCliente;
+                            telefoneFornecedor.Id = pJuridica.CodigoCliente;
                             telefoneFornecedor.Telefone = telefone;
                             telefoneFornecedor.Status = 1;
                             
@@ -555,7 +549,7 @@ namespace Persistencia.Service
                      {
                          Cliente cliente = new Cliente();
  
-                         cliente.CodigoCliente = codigoCliente;
+                         cliente.Id = codigoCliente;
                         cliente.Status = 9;
 
                         string tipoPessoa = TipoDePessoa(codigoCliente);
