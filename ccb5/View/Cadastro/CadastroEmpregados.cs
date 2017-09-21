@@ -36,9 +36,9 @@ namespace ccb5
                 if (new EmpregadoService().Inserir(
                     textBox_NomeFantasia.Text, 
                     textBox_CEP.Text,
-                    dateTimePicker_DataNascimento.Value, 
-                    dateTimePicker_DataAdmissao.Value, 
-                    dateTimePicker_DataDemissao.Value, 
+                    dateTimePicker_DataNascimento.Value.ToString(), 
+                    dateTimePicker_DataAdmissao.Value.ToString(), 
+                    dateTimePicker_DataDemissao.Value.ToString(), 
                     textBox_Logradouro.Text,
                     textBox_Bairro.Text, 
                     textBox_N.Text, 

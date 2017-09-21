@@ -14,17 +14,13 @@ namespace Persistencia.Service
         {
             empregadoDAO = new EmpregadoDAO();
         }
-        public long Inserir(string nome, string cep, DateTime DataNascimento, DateTime DataAdmissao, DateTime DataDemissao,
+        public long Inserir(string nome, string cep, string DataNascimento, string DataAdmissao, string DataDemissao,
         string logradouro, string bairro, string n, string cidade, string estado, string email, string telefone,
         string celular)
         {
             if (nome == "")
             {
                 MessageBox.Show("Verifique o campo: Nome .");
-            }
-            else if (telefone == "")
-            {
-                MessageBox.Show("Verifique o campo: Telefone");
             }
             else
             {
@@ -53,7 +49,9 @@ namespace Persistencia.Service
                         empregado.EnderecoId = id_endereco;
                         empregado.Nome = nome;
                         empregado.Email = email;
-                        //empregado.DataNascimento = da
+                        empregado.DataNascimento = DataNascimento;
+                        empregado.DataAdmissao = DataAdmissao;
+                        empregado.DataDemissao = DataDemissao;
 
                         id_empregado = new EmpregadoDAO().Inserir(empregado);
                         telefoneE.EmpregadoId = id_empregado;

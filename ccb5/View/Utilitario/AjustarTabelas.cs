@@ -1,6 +1,8 @@
-﻿using Persistencia.DAO;
+﻿using MySql.Data.MySqlClient;
+using Persistencia.DAO;
 using Persistencia.Modelo;
 using Persistencia.Service;
+using Persistencia.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,45 +17,21 @@ namespace ccb5
 {
     public partial class AjustarTabelas : Form
     {
-        private long CodigoCategoria = 0;
+        private Connection _connection;
 
         public AjustarTabelas()
         {
+            _connection = new Connection();
+
             InitializeComponent();
+
         }
 
         public AjustarTabelas(long codigo)
         {
-            CodigoCategoria = codigo;
-            InitializeComponent();
-            Categoria categoria = new CategoriaService().Buscar(CodigoCategoria);
-            textBox_Nome.Text = categoria.Nome;
-            textBox_Valor.Text = categoria.Valor.ToString();
+            InitializeComponent();   
         }
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void toolStripButton_Salvar_Click(object sender, EventArgs e)
-        {
-            DialogResult result2 = MessageBox.Show("Deseja salvar as alterações?",
-            "Salvar Alterações",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result2 == DialogResult.OK)
-            {
-                if (new CategoriaService().Atualizar(CodigoCategoria, textBox_Nome.Text, textBox_Valor.Text) != false)
-                    MessageBox.Show("Categoria alterada com Sucesso");
-                this.Close();
-            }
-            else
-                MessageBox.Show("Verifique as informações inseridas!");
-
-            if (result2 == DialogResult.Cancel)
-            { }
-        }
-
+  
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,18 +39,69 @@ namespace ccb5
 
         private void toolStripButton_Excluir_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Deseja realmente excluir?",
-            "Exclusão de Categoria",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result1 == DialogResult.OK)
+            
+        }
+
+        private void btnEmpregado_Click(object sender, EventArgs e)
+        {
+            try
             {
-              if(new CategoriaService().Remover(CodigoCategoria) != false)
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
-                    MessageBox.Show("Categoria excluida com sucesso!");
-                    this.Close();
-                } else MessageBox.Show("Categoria invalida!");
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT count(id) AS qt FROM EMPREGADOS;";
+                    MySqlDataReader leitor = comando.ExecuteReader();
+                    if (leitor.HasRows)
+                    {
+                        leitor.Read();
+                        progressBar1.Maximum = Convert.ToInt32(leitor["qt"].ToString());
+                        progressBar1.Value = 0;
+                        progressBar1.Visible = true;
+                        leitor.Close();
+                    }
+                    else return;
+
+                    comando.CommandText = "SELECT id,nome,funcao,nascimento,admissao,demissao,endereco,cidade,uf,cep,telefone1,telefone2,telefone3,email,obs FROM EMPREGADOS;";
+                    leitor = comando.ExecuteReader();
+
+                    
+                    while (leitor.Read())
+                    {
+                        progressBar1.Value += 1;
+                        
+                        EmpregadoService empregadoService = new EmpregadoService();
+
+                        new EmpregadoService().Inserir(
+                                    leitor["nome"].ToString(),
+                                    leitor["cep"].ToString(),
+                                    leitor["nascimento"].ToString(),
+                                    leitor["admissao"].ToString(),
+                                    leitor["demissao"].ToString(),
+                                    leitor["endereco"].ToString(),
+                                    "",
+                                    "0",
+                                    leitor["cidade"].ToString(),
+                                    leitor["uf"].ToString(),
+                                    leitor["email"].ToString(),
+                                    leitor["telefone1"].ToString(),
+                                    leitor["telefone2"].ToString());
+                    }
+                }
             }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+                progressBar1.Visible = false;
+            }
+        }
+
+        private void AjustarTabelas_Load(object sender, EventArgs e)
+        {
+            progressBar1.Visible = false;
         }
     }
 }

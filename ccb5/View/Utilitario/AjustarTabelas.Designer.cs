@@ -32,10 +32,11 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnEmpregado = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Excluir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_Cliente = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnEmpregado,
             this.toolStripSeparator1,
-            this.toolStripButton_Excluir,
+            this.toolStripButton_Cliente,
             this.toolStripSeparator2,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
@@ -71,7 +72,7 @@
             this.btnEmpregado.Text = "Empregado";
             this.btnEmpregado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmpregado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEmpregado.Click += new System.EventHandler(this.toolStripButton_Salvar_Click);
+            this.btnEmpregado.Click += new System.EventHandler(this.btnEmpregado_Click);
             // 
             // toolStripSeparator1
             // 
@@ -79,20 +80,19 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(3, 70);
             // 
-            // toolStripButton_Excluir
+            // toolStripButton_Cliente
             // 
-            this.toolStripButton_Excluir.AutoSize = false;
-            this.toolStripButton_Excluir.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Excluir.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.toolStripButton_Excluir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Excluir.Image")));
-            this.toolStripButton_Excluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Excluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Excluir.Name = "toolStripButton_Excluir";
-            this.toolStripButton_Excluir.Size = new System.Drawing.Size(95, 70);
-            this.toolStripButton_Excluir.Text = "Excluir";
-            this.toolStripButton_Excluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Excluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Excluir.Click += new System.EventHandler(this.toolStripButton_Excluir_Click);
+            this.toolStripButton_Cliente.AutoSize = false;
+            this.toolStripButton_Cliente.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Cliente.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.toolStripButton_Cliente.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Cliente.Image")));
+            this.toolStripButton_Cliente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton_Cliente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Cliente.Name = "toolStripButton_Cliente";
+            this.toolStripButton_Cliente.Size = new System.Drawing.Size(95, 70);
+            this.toolStripButton_Cliente.Text = "Cliente";
+            this.toolStripButton_Cliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton_Cliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator2
             // 
@@ -121,12 +121,20 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(0, 76);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(711, 23);
+            this.progressBar1.TabIndex = 97;
+            // 
             // AjustarTabelas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(711, 343);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -134,6 +142,7 @@
             this.Name = "AjustarTabelas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Utilitario Ajustar Tabelas";
+            this.Load += new System.EventHandler(this.AjustarTabelas_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -144,11 +153,12 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Excluir;
+        private System.Windows.Forms.ToolStripButton toolStripButton_Cliente;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnEmpregado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

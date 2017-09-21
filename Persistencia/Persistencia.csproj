@@ -112,6 +112,7 @@
     <Compile Include="Modelo\VeiculoTemCheckList.cs" />
     <Compile Include="Modelo\VeiculoTemFornecedor.cs" />
     <Compile Include="Modelo\VeiculoTemManutencao.cs" />
+    <Compile Include="Modelo\_Empregado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CategoriaService.cs" />

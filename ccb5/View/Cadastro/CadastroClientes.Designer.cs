@@ -413,7 +413,7 @@
             // 
             // textBox_Nome
             // 
-            this.textBox_Nome.Location = new System.Drawing.Point(134, 206);
+            this.textBox_Nome.Location = new System.Drawing.Point(163, 205);
             this.textBox_Nome.Mask = "?????????????????????????????????????????????????";
             this.textBox_Nome.Name = "textBox_Nome";
             this.textBox_Nome.Size = new System.Drawing.Size(291, 32);
@@ -421,7 +421,7 @@
             // 
             // textBox_RG
             // 
-            this.textBox_RG.Location = new System.Drawing.Point(134, 246);
+            this.textBox_RG.Location = new System.Drawing.Point(163, 245);
             this.textBox_RG.Mask = "00,000,000-0";
             this.textBox_RG.Name = "textBox_RG";
             this.textBox_RG.Size = new System.Drawing.Size(291, 32);
@@ -429,7 +429,7 @@
             // 
             // textBox_CNH
             // 
-            this.textBox_CNH.Location = new System.Drawing.Point(134, 289);
+            this.textBox_CNH.Location = new System.Drawing.Point(163, 288);
             this.textBox_CNH.Mask = "00000000000";
             this.textBox_CNH.Name = "textBox_CNH";
             this.textBox_CNH.Size = new System.Drawing.Size(291, 32);
@@ -437,7 +437,7 @@
             // 
             // textBox_Passaporte
             // 
-            this.textBox_Passaporte.Location = new System.Drawing.Point(134, 338);
+            this.textBox_Passaporte.Location = new System.Drawing.Point(163, 337);
             this.textBox_Passaporte.Mask = "000000000000000000";
             this.textBox_Passaporte.Name = "textBox_Passaporte";
             this.textBox_Passaporte.Size = new System.Drawing.Size(291, 32);
@@ -445,7 +445,7 @@
             // 
             // textBox_NomeFantasia
             // 
-            this.textBox_NomeFantasia.Location = new System.Drawing.Point(134, 206);
+            this.textBox_NomeFantasia.Location = new System.Drawing.Point(163, 205);
             this.textBox_NomeFantasia.Mask = "?????????????????????????????????????????????????";
             this.textBox_NomeFantasia.Name = "textBox_NomeFantasia";
             this.textBox_NomeFantasia.Size = new System.Drawing.Size(291, 32);
@@ -453,7 +453,7 @@
             // 
             // textBox_RazaoSocial
             // 
-            this.textBox_RazaoSocial.Location = new System.Drawing.Point(134, 246);
+            this.textBox_RazaoSocial.Location = new System.Drawing.Point(163, 245);
             this.textBox_RazaoSocial.Mask = "?????????????????????????????????????????????????";
             this.textBox_RazaoSocial.Name = "textBox_RazaoSocial";
             this.textBox_RazaoSocial.Size = new System.Drawing.Size(291, 32);
@@ -461,7 +461,7 @@
             // 
             // textBox_CNPJ
             // 
-            this.textBox_CNPJ.Location = new System.Drawing.Point(135, 338);
+            this.textBox_CNPJ.Location = new System.Drawing.Point(164, 337);
             this.textBox_CNPJ.Mask = "00,000,000/0000-00";
             this.textBox_CNPJ.Name = "textBox_CNPJ";
             this.textBox_CNPJ.Size = new System.Drawing.Size(290, 32);
@@ -469,7 +469,7 @@
             // 
             // textBox_InscEstadual
             // 
-            this.textBox_InscEstadual.Location = new System.Drawing.Point(135, 289);
+            this.textBox_InscEstadual.Location = new System.Drawing.Point(164, 288);
             this.textBox_InscEstadual.Mask = "0000000000000000000000000";
             this.textBox_InscEstadual.Name = "textBox_InscEstadual";
             this.textBox_InscEstadual.Size = new System.Drawing.Size(290, 32);
@@ -477,7 +477,7 @@
             // 
             // textBox_CPF
             // 
-            this.textBox_CPF.Location = new System.Drawing.Point(559, 206);
+            this.textBox_CPF.Location = new System.Drawing.Point(578, 202);
             this.textBox_CPF.Mask = "000,000,000-00";
             this.textBox_CPF.Name = "textBox_CPF";
             this.textBox_CPF.Size = new System.Drawing.Size(244, 32);
@@ -485,7 +485,7 @@
             // 
             // textBox_Naturalidade
             // 
-            this.textBox_Naturalidade.Location = new System.Drawing.Point(559, 251);
+            this.textBox_Naturalidade.Location = new System.Drawing.Point(578, 247);
             this.textBox_Naturalidade.Mask = "?????????????????";
             this.textBox_Naturalidade.Name = "textBox_Naturalidade";
             this.textBox_Naturalidade.Size = new System.Drawing.Size(244, 32);
@@ -493,7 +493,7 @@
             // 
             // textBox_DataNasc
             // 
-            this.textBox_DataNasc.Location = new System.Drawing.Point(559, 302);
+            this.textBox_DataNasc.Location = new System.Drawing.Point(578, 298);
             this.textBox_DataNasc.Mask = "00/00/0000";
             this.textBox_DataNasc.Name = "textBox_DataNasc";
             this.textBox_DataNasc.Size = new System.Drawing.Size(246, 32);
@@ -502,7 +502,7 @@
             // 
             // textBox_CEP
             // 
-            this.textBox_CEP.Location = new System.Drawing.Point(134, 397);
+            this.textBox_CEP.Location = new System.Drawing.Point(163, 396);
             this.textBox_CEP.Mask = "00000-000";
             this.textBox_CEP.Name = "textBox_CEP";
             this.textBox_CEP.Size = new System.Drawing.Size(291, 32);
@@ -510,7 +510,7 @@
             // 
             // textBox_Bairro
             // 
-            this.textBox_Bairro.Location = new System.Drawing.Point(134, 434);
+            this.textBox_Bairro.Location = new System.Drawing.Point(163, 433);
             this.textBox_Bairro.Mask = "?????????????????????????????????????????????????";
             this.textBox_Bairro.Name = "textBox_Bairro";
             this.textBox_Bairro.Size = new System.Drawing.Size(291, 32);
@@ -518,7 +518,7 @@
             // 
             // textBox_Telefone
             // 
-            this.textBox_Telefone.Location = new System.Drawing.Point(134, 474);
+            this.textBox_Telefone.Location = new System.Drawing.Point(163, 473);
             this.textBox_Telefone.Mask = "00000000000";
             this.textBox_Telefone.Name = "textBox_Telefone";
             this.textBox_Telefone.Size = new System.Drawing.Size(291, 32);
@@ -526,14 +526,14 @@
             // 
             // textBox_Email
             // 
-            this.textBox_Email.Location = new System.Drawing.Point(559, 477);
+            this.textBox_Email.Location = new System.Drawing.Point(578, 473);
             this.textBox_Email.Name = "textBox_Email";
             this.textBox_Email.Size = new System.Drawing.Size(244, 32);
             this.textBox_Email.TabIndex = 57;
             // 
             // textBox_Logradouro
             // 
-            this.textBox_Logradouro.Location = new System.Drawing.Point(559, 400);
+            this.textBox_Logradouro.Location = new System.Drawing.Point(578, 396);
             this.textBox_Logradouro.Mask = "?????????????????????????????????????????????????";
             this.textBox_Logradouro.Name = "textBox_Logradouro";
             this.textBox_Logradouro.Size = new System.Drawing.Size(244, 32);
@@ -541,7 +541,7 @@
             // 
             // textBox_Cidade
             // 
-            this.textBox_Cidade.Location = new System.Drawing.Point(559, 439);
+            this.textBox_Cidade.Location = new System.Drawing.Point(578, 435);
             this.textBox_Cidade.Mask = "?????????????????????????????????????????????????";
             this.textBox_Cidade.Name = "textBox_Cidade";
             this.textBox_Cidade.Size = new System.Drawing.Size(244, 32);

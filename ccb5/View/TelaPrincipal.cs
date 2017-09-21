@@ -171,6 +171,12 @@ namespace ccb5
             Empregados novo = new Empregados();
             novo.ShowDialog();
         }
+
+        private void toolStripButtonImportar_Click(object sender, EventArgs e)
+        {
+            AjustarTabelas novo = new AjustarTabelas();
+            novo.ShowDialog();
+        }
     }
 }
 
